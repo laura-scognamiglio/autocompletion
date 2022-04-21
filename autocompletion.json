@@ -1,0 +1,27 @@
+[
+{"type":"header","version":"5.1.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"autocompletion"},
+{"type":"table","name":"pierres","database":"autocompletion","data":
+[
+{"id":"1","name":"agathe","tag1":"repos","tag2":"paix"},
+{"id":"2","name":"ambre","tag1":"energie","tag2":"soleil"},
+{"id":"3","name":"cornaline","tag1":"repos","tag2":"eau"},
+{"id":"4","name":"fluorite","tag1":"energie","tag2":"sagesse"},
+{"id":"5","name":"tourmaline","tag1":"confiance","tag2":"force"},
+{"id":"6","name":"quartz","tag1":"soleil","tag2":"force"},
+{"id":"7","name":"onyx","tag1":"confiance ","tag2":"force"},
+{"id":"8","name":"opale","tag1":"paix","tag2":"lune"},
+{"id":"9","name":"oeil de tigre","tag1":"force","tag2":"sagesse"},
+{"id":"10","name":"obsidienne ","tag1":"repos","tag2":"lune"},
+{"id":"11","name":"jade","tag1":"paix ","tag2":"lune"},
+{"id":"12","name":"grenat","tag1":"abondance ","tag2":"force"},
+{"id":"13","name":"saphir","tag1":"dialogue","tag2":"ouverture"},
+{"id":"14","name":"sodalite","tag1":"force","tag2":"confiance"},
+{"id":"15","name":"améthyste","tag1":"puissance ","tag2":"étoile "},
+{"id":"17","name":"pierre de lune","tag1":"repos","tag2":"paix"},
+{"id":"18","name":"oeil de faucon","tag1":"energie","tag2":"soleil"},
+{"id":"19","name":"calcite","tag1":"repos","tag2":"eau"},
+{"id":"20","name":"turquoise","tag1":"energie","tag2":"sagesse"}
+]
+}
+]
