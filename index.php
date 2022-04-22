@@ -20,7 +20,7 @@ require_once('models/SearchBar.php');
 <body>
     <header>
         
-            <form action="" method="post" class="searchBar">
+            <form action="" method="get" class="searchBar">
                 <div class=".wrapper">
                     <label for="search"> search a crystal</label>
                     <input type="text" id="search" name="search" placeholder="search...">

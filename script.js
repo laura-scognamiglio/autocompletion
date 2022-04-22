@@ -18,15 +18,23 @@ document.addEventListener("DOMContentLoaded", function () {
     var resultsWrapper = document.querySelector('.results');
     var searchWrapper = document.querySelector('.wrapper');
 
-    fetch("autocompletion.json")
+    // fetch('traitement.php', {
+    //     method: 'POST',
+    //     body:formData
+    fetch('autocompletion.json',{
+        method: 'GET',
+        body: JSON.stringify(),
+    })
 //methode fetch response.json
 //texte brut
-    .then(function (){
-  
+    .then(function (response) {
+            return response.text();
     })
-  
-    .catch(function (){
-  
+    .then(function (body) {
+        console.log(body);
+    })
+    .catch(function (error){
+        console.log('error:',error);
     })
 
     searchInput.addEventListener('keyup', (e) => {
