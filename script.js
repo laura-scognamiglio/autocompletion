@@ -2,20 +2,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     //CDN puzzy-search contient regex et correction/suggestion, 
     //possibilité de l'intallé via npm . 
-    const { search, suggest, regex } = require('puzzy-search')
+    // const { search, suggest, regex } = require('puzzy-search')
     // const { search, suggest, regex } = puzzySearch // for CDN
 
-    const sentence = 'You want the web server to support four of the most popular programming paradigms.'
+    // const sentence = 'You want the web server to support four of the most popular programming paradigms.'
 
-    const str = 'puppular programmng paradim'
+    // const str = 'puppular programmng paradim'
 
-    search(str, sentence) // true
+    // search(str, sentence) // true
 
-    suggest(str, sentence) // popular programming paradigm
+    // suggest(str, sentence) // popular programming paradigm
 
-    regex(str) // new RegExp(...puzzy...)
+    // regex(str) // new RegExp(...puzzy...)
 
-    sentence.match(regex(str)) !== null // true
+    // sentence.match(regex(str)) !== null // true
 
 
 
@@ -42,9 +42,10 @@ document.addEventListener("DOMContentLoaded", function () {
     // fetch('traitement.php', {
     //     method: 'POST',
     //     body:formData
-    fetch('autocompletion.json',{
+    fetch('index.php',{
         method: 'GET',
-        body: JSON.stringify(),
+        //okay mais je parse quoi?
+        body: JSON.parse(hfkzhiuzhvluizh),
     })
 //methode fetch response.json
 //texte brut

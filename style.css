@@ -1,45 +1,79 @@
-body{
-    height: 100vh;
-    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
-
+body {
+  height: 100vh;
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
 }
 
-h1{
-    font-family: 'Allerta Stencil', sans-serif;
-    font-size: 4rem;
+h1 {
+  font-family: "Allerta Stencil", sans-serif;
+  font-size: 4rem;
 }
 
 .wrapper {
-    margin: 0 auto;
-    background: #ffffff4f;
-    border-radius: 5px;
-    box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.15);
-    position: relative;
-    width: 450px;
+  margin: 0 auto;
+  background: #ffffff4f;
+  border-radius: 5px;
+  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.15);
+  position: relative;
+  width: 450px;
 }
-  
 
 input {
-    width:80%;
-    border: none;
-    height: 50px;
-    border-radius: 5px;
-    padding: 0px 40px 0px 10px;
-    font-size: 16px;
-    box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
+  width: 80%;
+  border: none;
+  height: 50px;
+  border-radius: 5px;
+  padding: 0px 40px 0px 10px;
+  font-size: 16px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 input:focus {
-    outline: none;
+  outline: none;
 }
 
 button {
-  
-    border: none;
-    background: none;
-    top: 0;
-    right: 0;
-    height: 50px;
-    padding: 0;
-    width: 50px;
+  border: none;
+  background: none;
+  top: 0;
+  right: 0;
+  height: 50px;
+  padding: 0;
+  width: 50px;
+}
+
+button i {
+  width: 100%;
+  color: #a18cd1;
+  line-height: 50px;
+  font-size: 22px;
+}
+
+.results {
+  padding: 0px;
+}
+
+.results ul {
+  margin: 0;
+  padding: 0;
+}
+.results ul li {
+  list-style: none;
+  border-radius: 3px;
+  opacity: 0;
+  display: none;
+  padding: 8px 12px;
+  transition: all 0.5s linear;
+}
+
+.show .results ul li {
+  opacity: 1;
+  display: block;
+}
+
+.show .results {
+  padding: 10px;
+}
+
+.results ul li:hover {
+  background: #ececec;
 }

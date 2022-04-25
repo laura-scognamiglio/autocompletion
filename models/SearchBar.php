@@ -11,12 +11,13 @@ class SearchBar extends Database{
         
     }
 
-    // $query = mysqli_query($conn,"SELECT * FROM content_ref_table,course_ref_table 
-    // WHERE title LIKE '%".$search_term."%' OR description LIKE '%".$search_term."%' 
-    // and content_ref_table.course_id = course_ref_table.course_id 
-    // and courses = '".$selected_course."' LIMIT 0 , 30")
 
     function getCrystals($crystalSearch){
+
+        //pour une recherche de correspondance lettreé dans la BDD utilisé le selecteur LIKE 
+        //niveau securité mettre les variables attendus dans le execute
+        //retourner un json_encode 
+
         
         $sqlPrepare = $this->pdo->prepare("SELECT * FROM pierres WHERE `name` LIKE '%".$crystalSearch."%' OR `tag1` LIKE '%".$crystalSearch."%'");
         $sqlPrepare->execute();
@@ -24,11 +25,34 @@ class SearchBar extends Database{
 
         foreach($pierres as $pierre){
             echo ("<p class = crystals> {$pierre['name']} {$pierre['tag1']}  </p>");
-            // echo ("<p class = crystals> </p>");
+           
         }
-    
+
+       ;
         // echo"crystal ok";
-        return $pierres;
+        return  json_encode($pierres);
+    }
+
+    function getCrystalById(){
+
+        // public function getResaSolo(){
+
+            //on recup la resa seule en fonction de l'id sur la page html planning on a indiqué ds le href le get avec 'reservation.php?id_resa=$id_resa'
+                //     $id_resa = $_GET["id_resa"];
+                //     $sql_resa = "SELECT * FROM {$this->table} WHERE id = '$id_resa'";
+                //     $get_resa = $this->pdo->prepare($sql_resa);
+                //     $get_resa->execute();
+                //     $result_resa = $get_resa->fetchAll();
+            
+            
+                //     return $result_resa;
+                // }
+
+        
+        // $read_resa = $this->pdo->prepare("SELECT * FROM `utilisateurs` WHERE `id`= '$idCrystal'";
+        // $read_resa->execute();
+        // $resa = $read_resa->fetchAll();
+
     }
     
 }
