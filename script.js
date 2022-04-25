@@ -1,4 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+    //CDN puzzy-search contient regex et correction/suggestion, 
+    //possibilité de l'intallé via npm . 
+    const { search, suggest, regex } = require('puzzy-search')
+    // const { search, suggest, regex } = puzzySearch // for CDN
+
+    const sentence = 'You want the web server to support four of the most popular programming paradigms.'
+
+    const str = 'puppular programmng paradim'
+
+    search(str, sentence) // true
+
+    suggest(str, sentence) // popular programming paradigm
+
+    regex(str) // new RegExp(...puzzy...)
+
+    sentence.match(regex(str)) !== null // true
+
+
+
+
     let searchable = [
         'Elastic',
         'PHP',
