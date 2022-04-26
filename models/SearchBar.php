@@ -23,14 +23,14 @@ class SearchBar extends Database{
         $sqlPrepare->execute();
         $pierres = $sqlPrepare->fetchAll();
 
-        foreach($pierres as $pierre){
-            echo ("<p class = crystals> {$pierre['name']} {$pierre['tag1']}  </p>");
+        // foreach($pierres as $pierre){
+        //     echo ("<p class = crystals> {$pierre['name']} {$pierre['tag1']}  </p>");
            
-        }
+        // }
 
-       ;
-        // echo"crystal ok";
-        return  json_encode($pierres);
+        echo json_encode($pierres);
+       // echo"crystal ok";
+       return $pierres;
     }
 
     function getCrystalById(){
@@ -49,9 +49,9 @@ class SearchBar extends Database{
                 // }
 
         
-        // $read_resa = $this->pdo->prepare("SELECT * FROM `utilisateurs` WHERE `id`= '$idCrystal'";
-        // $read_resa->execute();
-        // $resa = $read_resa->fetchAll();
+        $read_resa = $this->pdo->prepare("SELECT * FROM pierres WHERE `id`= '$idCrystal'");
+        $read_resa->execute();
+        $resa = $read_resa->fetchAll();
 
     }
     

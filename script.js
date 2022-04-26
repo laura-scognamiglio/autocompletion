@@ -19,16 +19,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
-    let searchable = [
-        'Elastic',
-        'PHP',
-        'Something about CSS',
-        'How to code',
-        'JavaScript',
-        'Coding',
-        'Some other item',
-      ];
       
     // var inputs = document.getElementById("myForm");
     //regarder json stringify 
@@ -39,52 +29,51 @@ document.addEventListener("DOMContentLoaded", function () {
     var resultsWrapper = document.querySelector('.results');
     var searchWrapper = document.querySelector('.wrapper');
 
-    // fetch('traitement.php', {
-    //     method: 'POST',
-    //     body:formData
-    fetch('index.php',{
-        method: 'GET',
-        //okay mais je parse quoi?
-        body: JSON.parse(hfkzhiuzhvluizh),
-    })
-//methode fetch response.json
-//texte brut
-    .then(function (response) {
-            return response.text();
-    })
-    .then(function (body) {
-        console.log(body);
-    })
-    .catch(function (error){
-        console.log('error:',error);
-    })
 
     searchInput.addEventListener('keyup', (e) => {
         //fetch les results fichier json ou dialogue avc bdd? var results = []
-        
-        let results = [];
-        let input = searchInput.value;
-        if(input.length){
-            results = searchable.filter((item) => {
-                return item.toLowerCase().includes(input.toLowerCase());
-            });
-        }
-        renderResults(results);
-    });
-
-    function renderResults(results) {
-        if(!results.length){
+        //fetch a l'interieur de l'event 
+        fetch('index.php',{
+            method: 'GET',
+            //okay mais je parse quoi? 
+            body: JSON.json(searchInput),
+        })
+    //methode fetch response.json
+    //texte brut
+    //!empecher le comportement par default et ne pas recharger la page 
+        .then(function (response) {
+            //response.json pour que les infos soient traiter 
+                return response.json(searchInput);
+        })
+        .then(function (body) {
+            
+        function renderResults(results) {
+            let input = searchInput.value;
+            if(!results.length){
             return searchWrapper.classList.remove('show');
         }
 
-        const content = results
-        .map((item) => {
-        return `<li>${item}</li>`;
-        })
-        .join('');
-        searchWrapper.classList.add('show');
-        resultsWrapper.innerHTML = `<ul>${content}</ul>`;
+            const content = results.map((item) => {
+                return `<li>${item}</li>`;
+            }).join('');
+            searchWrapper.classList.add('show');
+            resultsWrapper.innerHTML = `<ul>${content}</ul>`;
     }
+        }).catch(function (error){
+            console.error('error:',error);
+        })
+    
+
+        // let results = [];
+        // 
+        // if(input.length){
+        //     results = idontknow.filter((item) => {
+        //         return item.toLowerCase().includes(input.toLowerCase());
+        //     });
+        // }
+        // renderResults(results);
+    });
+
 
 
 })
