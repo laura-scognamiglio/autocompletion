@@ -25,18 +25,22 @@ require_once('models/SearchBar.php');
 <body>
     <header>
             <h1>Crystal clear</h1>
-            <form action="" method="get" class="searchBar">
-                <div class="container show">
+            <form action="" method="post" class="searchBar">
+                
                     <div class="wrapper">
                         <label for="search"> search a crystal</label>
                         <input type="text" id="search" name="search" placeholder="search...">
                         <button type="submit" id="searchBtn" name="myBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
                         <div class="results">
-                            <ul>
-                            </ul>
+                            <li>test
+                            </li>
+                            <li>test
+                            </li>
+                            <li>test
+                            </li>
                         </div>
                     </div>
-                </div>
+            
             </form>
   
     </header>
@@ -47,8 +51,8 @@ require_once('models/SearchBar.php');
 <?php
 
 
-@$submit = htmlspecialchars($_GET['myBtn']);
-@$searchInput = $_GET['search'];
+@$submit = htmlspecialchars($_POST['myBtn']);
+@$searchInput = htmlspecialchars($_POST['search']);
 
 
 
