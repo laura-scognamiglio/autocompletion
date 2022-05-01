@@ -1,5 +1,6 @@
 body {
   height: 100vh;
+  padding: 0 20px;
   background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
 }
 
@@ -8,21 +9,86 @@ h1 {
   font-size: 4rem;
 }
 
+
+.wrapper{
+  position: relative;
+  max-width: 450px;
+  margin: 150px auto;
+  background: #ffffff4f;
+  border-radius: 5px;
+  box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.15);
+  
+}
+
+.wrapper .search{
+ width: 82%;
+ border-radius: 5px;
+ background: #ffffff4f;
+
+}
+
+ input {
+  border: none;
+  outline:none;
+  padding: 0 45px 0 0px; 
+  height: 50px;
+  width: 90%; 
+  border-radius: 5px;
+  font-size: 16px;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.icon{
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  position: absolute;
+  top: 20px;
+  right: 0;
+  text-align: center;
+  cursor: pointer;
+  color: #b69ad7;
+  
+}
+
+.search-input .results{
+ /* padding: 10px 8px; */
+ max-height: 300px;
+ overflow-y: auto;
+ opacity: 0;
+ pointer-events: none;
+}
+
+.results li{
+  list-style: none;
+  padding: 8px 12px;
+  width: 100%;
+  cursor: default;
+  border-radius:  3px;
+  display: none;
+
+}
+
+.results li:hover{
+  background-color: #b69ad78c;
+
+}
+
+/*
 .wrapper {
   margin: 0 auto;
   background: #ffffff4f;
   border-radius: 5px;
   box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.15);
-  position: relative;
-  width: 450px;
+ 
+  max-width: 450px;
 }
 
 input {
-  width: 80%;
+  width: 90%;
   border: none;
   height: 50px;
   border-radius: 5px;
-  padding: 0px 40px 0px 10px;
   font-size: 16px;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
 }
@@ -31,7 +97,7 @@ input:focus {
   outline: none;
 }
 
-button {
+.icon {
   border: none;
   background: none;
   top: 0;
@@ -41,7 +107,7 @@ button {
   width: 50px;
 }
 
-button i {
+.icon i {
   width: 100%;
   color: #a18cd1;
   line-height: 50px;
@@ -52,11 +118,11 @@ button i {
   padding: 0px;
 }
 
-.results ul {
+.results li {
   margin: 0;
   padding: 0;
 }
-.results ul li {
+.results  li {
   list-style: none;
   border-radius: 3px;
   opacity: 0;

@@ -25,13 +25,14 @@ require_once('models/SearchBar.php');
 <body>
     <header>
             <h1>Crystal clear</h1>
-            <form action="" method="post" class="searchBar">
+            <form action="" method="post" class="wrapper">
                 
-                    <div class="wrapper">
-                        <label for="search"> search a crystal</label>
-                        <input type="text" id="search" name="search" placeholder="search...">
-                        <button type="submit" id="searchBtn" name="myBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <div class="results">
+                    <div class="search-input">
+                        <label for="search">    search a crystal</label>
+                        <input type="text" name="search" placeholder="search...">
+                        <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+                            
+                        <div class="results ">
                             <li>test
                             </li>
                             <li>test
@@ -44,6 +45,9 @@ require_once('models/SearchBar.php');
             </form>
   
     </header>
+
+    <script src="script2.js"></script>
+
 </body>
 </html>
 
@@ -56,7 +60,7 @@ require_once('models/SearchBar.php');
 
 
 
-if (isset($submit) && isset($searchInput))
+if (isset($searchInput))
 {
     $searchTest = new SearchBar;
     $search = $searchTest->getCrystals(@$searchInput);

@@ -16,7 +16,9 @@ document.addEventListener("DOMContentLoaded", function (){
 //     // const pierresJson = 'http://localhost:8888/autocompletion/pierres.json';
 //     // const pierres = [];
     
-    var searchInput = document.getElementById('search');
+    const searchWrapper = document.querySelector(".search-input");
+    const inputBox = searchWrapper.querySelector("input");
+    const suggBox
 
 //     console.log(searchInput.value)
     // var resultsWrapper = document.querySelector('.results');
@@ -34,8 +36,8 @@ document.addEventListener("DOMContentLoaded", function (){
         return raw.json();
     })
     .then(raw => {
-        console.log(raw);
-        console.log("gfjke");
+        // console.log(raw);
+        // console.log("gfjke");
         // test = prompt("alors?", "...")
         
         // searchInput.addEventListener("keyup", () => {

@@ -28,7 +28,7 @@ class SearchBar extends Database{
            
         // }
 
-        echo json_encode($pierres);
+        // echo json_encode($pierres);
        // echo"crystal ok";
        return $pierres;
     }
