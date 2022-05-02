@@ -3,18 +3,20 @@ $var = file_get_contents('php://input');
 // require_once('models/Database.php');
 require_once('models/SearchBar.php');
 
+
 ?>
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/puzzy-search/dist/index.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script type="text/javascript" src="script2.js"></script>
+    <script src="pierres.json"></script>
+    <script src="script2.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap" rel="stylesheet">
@@ -46,7 +48,10 @@ require_once('models/SearchBar.php');
   
     </header>
 
-    <script src="script2.js"></script>
+    <!-- <script type="text/javascript">
+       var crystals = <?php echo "tralalala" ?>
+       document.write(crystals)
+    </script> -->
 
 </body>
 </html>
@@ -55,14 +60,21 @@ require_once('models/SearchBar.php');
 <?php
 
 
-@$submit = htmlspecialchars($_POST['myBtn']);
+
+
+
 @$searchInput = htmlspecialchars($_POST['search']);
 
+        if (isset($searchInput)){
 
+            $searchTest = new SearchBar;
+            $search = $searchTest->getCrystals(@$searchInput);
+            print_r($search);
+        }
 
-if (isset($searchInput))
-{
-    $searchTest = new SearchBar;
-    $search = $searchTest->getCrystals(@$searchInput);
+// if (isset($searchInput))
+// {
+    
+//     $search = $searchTest->getCrystals(@$searchInput);
   
-}
+// }

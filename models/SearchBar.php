@@ -19,18 +19,13 @@ class SearchBar extends Database{
         //retourner un json_encode 
 
         
-        $sqlPrepare = $this->pdo->prepare("SELECT * FROM pierres WHERE `name` LIKE '%".$crystalSearch."%' OR `tag1` LIKE '%".$crystalSearch."%'");
+        $sqlPrepare = $this->pdo->prepare("SELECT `name` FROM pierres WHERE `name` LIKE '%".$crystalSearch."%' ");
         $sqlPrepare->execute();
         $pierres = $sqlPrepare->fetchAll();
 
-        // foreach($pierres as $pierre){
-        //     echo ("<p class = crystals> {$pierre['name']} {$pierre['tag1']}  </p>");
-           
-        // }
-
-        // echo json_encode($pierres);
-       // echo"crystal ok";
-       return $pierres;
+        $pierresJson = json_encode($pierres);
+      
+       return $pierresJson;
     }
 
     function getCrystalById(){
