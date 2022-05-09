@@ -1,7 +1,5 @@
-[
-{"type":"header","version":"5.1.1","comment":"Export to JSON plugin for PHPMyAdmin"},
-{"type":"database","name":"autocompletion"},
-{"type":"table","name":"pierres","database":"autocompletion","data":
+
+
 [
 {"id":"1","name":"agathe","tag1":"repos","tag2":"paix"},
 {"id":"2","name":"ambre","tag1":"energie","tag2":"soleil"},
@@ -17,11 +15,10 @@
 {"id":"12","name":"grenat","tag1":"abondance ","tag2":"force"},
 {"id":"13","name":"saphir","tag1":"dialogue","tag2":"ouverture"},
 {"id":"14","name":"sodalite","tag1":"force","tag2":"confiance"},
-{"id":"15","name":"améthyste","tag1":"puissance ","tag2":"étoile "},
+{"id":"15","name":"amethyste","tag1":"puissance ","tag2":"étoile "},
 {"id":"17","name":"pierre de lune","tag1":"repos","tag2":"paix"},
 {"id":"18","name":"oeil de faucon","tag1":"energie","tag2":"soleil"},
 {"id":"19","name":"calcite","tag1":"repos","tag2":"eau"},
 {"id":"20","name":"turquoise","tag1":"energie","tag2":"sagesse"}
 ]
-}
-]
+

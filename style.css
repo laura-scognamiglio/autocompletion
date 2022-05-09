@@ -51,21 +51,22 @@ h1 {
   
 }
 
-.search-input .results{
- /* padding: 10px 8px; */
+/* .search-input .results{
+ padding: 10px 8px;
  max-height: 300px;
  overflow-y: auto;
  opacity: 0;
  pointer-events: none;
-}
+} */
 
 .results li{
   list-style: none;
+  background-color: pink;
   padding: 8px 12px;
   width: 100%;
   cursor: default;
   border-radius:  3px;
-  display: none;
+  /* display: none; */
 
 }
 

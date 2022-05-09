@@ -6,7 +6,7 @@ class Database{
     protected $pdo;
 
     function __construct(){
-        $dns = 'mysql:host=localhost;dbname=autocompletion';
+        $dns = 'mysql:host=localhost;dbname=autocompletion;charset=utf8';
     
                 try{
                     $pdo = new PDO($dns, 'root', 'root', 

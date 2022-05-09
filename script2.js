@@ -20,50 +20,53 @@ document.addEventListener("DOMContentLoaded", function () {
   const suggBox = searchWrapper.querySelector(".results");
 
   //     console.log(searchInput.value)
-  
+  // faire le json
 
   //?append
   //?createElement
   //?innerText
 
+  //json decode pour rcup mes données de input php
+  
   fetch("pierres.json", {
-    method: "POST",
-  })
+      method: "POST",
+    })
     .then((raw) => raw.json())
     .then((raw) => {
-
-      const rawData = raw[2]["data"];
-      
-      function getData() {
-          var tab = [];
-        rawData.forEach((rawData) => {
-            pierreName = rawData.name;
-            tab.push(pierreName)
-        });
+        console.log(raw);
+        const rawData = raw[2]["data"];
+          console.log(rawData);
+        
+        function getData() {
+            var tab = [];
+            rawData.forEach((rawData) => {
+                var pierreName = rawData.name;
+                tab.push(pierreName)
+            });
             //return les valeurs du foreach en tableau
-              return tab;
-      };
-      
-    const pierreNames = getData();
-    // console.log((pierreNames));
-    const pierreNamesTab =  Object.values(pierreNames); // or Object.entries
-    // console.log(pierreNamesTab);
-      
-      inputBox.onkeyup = (event) => {
+            return tab;
+        };
+        
+        const pierreNames = getData();
+        // console.log((pierreNames));
+        const pierreNamesTab =  Object.entries(pierreNames); // or Object.values
+        console.log(pierreNamesTab);
+        
+        inputBox.onkeyup = (event) => {
         let userData = event.target.value;
         console.log(userData);
         let emptyArray = [];
-        // const match = userData.match(pierreNamesTab);
+        // var match = userData.match(pierreNamesTab);
 
         // console.log(match);
-//!comparer dans ma condition utilisé .match()? 
+
         if (userData) {
-         emptyArray = pierreNamesTab.filter((data)=>{
+         emptyArray = pierreNamesTab.filter((userData)=>{
             //  console.log(data);
-            return data.toLocaleLowerCase();
+            return userData.toLowerCase();
         });
-        emptyArray = emptyArray.map((data)=>{
-            return data = '<li>'+ data +'</li>';
+        emptyArray = emptyArray.map((userData)=>{
+            return userData = '<li>'+ userData +'</li>';
         })
        
         }
@@ -73,15 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
       // console.log(raw[2]['data'][0].name);
       // return data.pierres
 
-      // searchInput.addEventListener("keyup", () => {
-
-      //     var searchInputValue = searchInput.value
-
-      //     return raw.filter(crystal => crystal.match(searchInputValue))
-      //     // console.log(raw.filter(pierre => pierre.match(raw)))
-      //     // matchData();
-      //     // console.log(matchData())
-      // })
+      // qq
 
       
     });
