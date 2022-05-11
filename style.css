@@ -54,26 +54,26 @@ h1 {
 .search-input .results{
  padding: 10px 8px;
  max-height: 300px;
- overflow-y: auto;
- opacity: 0;
- pointer-events: none;
+ /* overflow-y: auto; */
+ /* opacity: 0; */
+ /* pointer-events: none; */
 }
 
-.results li{
+/* .results li{
   list-style: none;
   background-color: pink;
   padding: 8px 12px;
   width: 100%;
   cursor: default;
   border-radius:  3px;
-  display: none;
+   display: none; 
 
-}
+} */
 
-.results li:hover{
+/* .results li:hover{
   background-color: #b69ad78c;
 
-}
+} */
 
 /*
 .wrapper {

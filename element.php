@@ -7,9 +7,14 @@ if(!empty($_POST['search'])){
     $modelSearch = new SearchBar;
     $searchResult = $modelSearch->getCrystals($inputUser);
     $searchResultStart = $modelSearch->getCrystalsStart($inputUser);
-    // var_dump($searchResult);
-    echo json_encode($searchResult);
+   
+    $searchResults = array(
+        "crystalsAll" => $searchResult, 
+        "crystalsStart" => $searchResultStart
+    );
+    echo json_encode($searchResults);
+    // echo json_encode($searchResultStart);
 }
 
-//mettre ds un foutu tableau les deux resulyats des requetes php et mettre ça
-//en json_encode et surtout en ptn d'echo 
+//mettre ds un tableau les deux resulyats des requetes php et mettre ça
+//en json_encode et surtout en d'echo 
