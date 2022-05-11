@@ -1,12 +1,3 @@
-<?php
-$var = (file_get_contents('php://input'));
-
-// require_once('models/Database.php');
-require_once('models/SearchBar.php');
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -27,37 +18,22 @@ require_once('models/SearchBar.php');
 <body>
     <header>
             <h1>Crystal clear</h1>
-            <form action="" method="post" class="wrapper">
+            <form action="" method="post" class="wrapper" autocomplete="off">
                 
                     <div class="search-input">
                         <label for="search">search a crystal</label>
-                        <input  type="text" name="search" placeholder="search...">
+                        <input type="text" name="search" placeholder="search...">
                         <div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                             
-                        <div class="results ">
-                            <li>test
-                            </li>
-                            <li>test
-                            </li>
-                            <li>test
-                            </li>
+                        <div class="results">
+                            <ul></ul>
                         </div>
                     </div>
             
             </form>
-  
     </header>
 </body>
 </html>
 
 
-<?php
 
-@$searchInput = htmlspecialchars($_POST['search']);
-if (isset($searchInput)){
-
-    $searchTest = new SearchBar;
-    $search = $searchTest->getCrystals(@$searchInput);
-    echo ($search);
-    // echo $search;
-}

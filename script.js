@@ -23,20 +23,23 @@ document.addEventListener("DOMContentLoaded", function () {
     // var inputs = document.getElementById("myForm");
     //regarder json stringify 
     
-    var form = document.querySelector('.searchBar');
-    var button = document.getElementById('searchBtn');
-    var searchInput = document.getElementById('search');
-    var resultsWrapper = document.querySelector('.results');
-    var searchWrapper = document.querySelector('.wrapper');
+ 
+   
+    // var resultsWrapper = document.querySelector('.results');
+    // var searchWrapper = document.querySelector('.wrapper');
+    const searchWrapper = document.querySelector(".search-input");
+    const inputBox = searchWrapper.querySelector("input");
+    const suggBox = searchWrapper.querySelector(".results");
 
-
-    searchInput.addEventListener('keyup', (e) => {
+    inputBox.addEventListener('keyup', (e) => {
         //fetch les results fichier json ou dialogue avc bdd? var results = []
         //fetch a l'interieur de l'event 
+        var searchInputValue = inputBox.value
+
         fetch('index.php',{
             method: 'GET',
             //okay mais je parse quoi? 
-            body: JSON.json(searchInput),
+            body: searchInputValue,
         })
     //methode fetch response.json
     //texte brut
@@ -50,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         function renderResults(results) {
             let input = searchInput.value;
             if(!results.length){
-            return searchWrapper.classList.remove('show');
+            // return searchWrapper.classList.remove('show');
         }
 
             const content = results.map((item) => {

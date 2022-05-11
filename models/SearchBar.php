@@ -22,16 +22,21 @@ class SearchBar extends Database{
         $sqlPrepare = $this->pdo->prepare("SELECT `name` FROM pierres WHERE `name` LIKE '%".$crystalSearch."%' ");
         $sqlPrepare->execute();
         $pierres = $sqlPrepare->fetchAll();
-
-        $pierresJson = json_encode($pierres);
       
-       return $pierresJson;
+       return $pierres;
+    }
+
+    function getCrystalsStart($crystalSearch){
+
+        $sqlPrepare = $this->pdo->prepare("SELECT `name` FROM pierres WHERE `name` LIKE '$crystalSearch%'  ");
+        $sqlPrepare->execute();
+        $pierresStart = $sqlPrepare->fetchAll();
+    
+       return $pierresStart;
     }
 
     function getCrystalById(){
 
-        
-        
         $sqlPrepare = $this->pdo->prepare("SELECT * FROM pierres WHERE `id`= '$idCrystal'");
         $sqlPrepare->execute();
         $pierreId = $sqlPrepare->fetchAll();

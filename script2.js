@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const searchWrapper = document.querySelector(".search-input");
   const inputBox = searchWrapper.querySelector("input");
-
   const suggBox = searchWrapper.querySelector(".results");
 
   //     console.log(searchInput.value)
