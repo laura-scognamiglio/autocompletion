@@ -19,7 +19,7 @@ class SearchBar extends Database{
         //retourner un json_encode 
 
         
-        $sqlPrepare = $this->pdo->prepare("SELECT `name` FROM pierres WHERE `name` LIKE '%".$crystalSearch."%' ");
+        $sqlPrepare = $this->pdo->prepare("SELECT `name`, `id` FROM pierres WHERE `name` LIKE '%".$crystalSearch."%' ");
         $sqlPrepare->execute();
         $pierres = $sqlPrepare->fetchAll();
       
@@ -28,7 +28,7 @@ class SearchBar extends Database{
 
     function getCrystalsStart($crystalSearch){
 
-        $sqlPrepare = $this->pdo->prepare("SELECT `name` FROM pierres WHERE `name` LIKE '$crystalSearch%'  ");
+        $sqlPrepare = $this->pdo->prepare("SELECT `name`, `id` FROM pierres WHERE `name` LIKE '$crystalSearch%'  ");
         $sqlPrepare->execute();
         $pierresStart = $sqlPrepare->fetchAll();
     

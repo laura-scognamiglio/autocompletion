@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         var datas = new FormData();
         datas.append('search', searchInputValue);
 
-            fetch('element.php',{
+            fetch('traitement.php',{
                 method: 'POST',
                 body: datas
             })
@@ -25,29 +25,36 @@ document.addEventListener("DOMContentLoaded", (event) => {
             .then(raw => raw.json())  
             .then(raw => {
                 
-                // console.log(raw.crystalsAll);
+                // console.log(raw);
                 let emptyLi = "";
 
-                if(inputBox != null) {
+                var items = raw.crystalsAll;
 
-                    for(let i = 0; i < raw.crystalsAll.length; i++){
+                if(searchInputValue != null) {
+                    for(let i = 1; i < items.length; i++){
                         
                         var item = raw.crystalsAll[i];
 
-                        console.log(typeof(item));
+                        // console.log(typeof(item));
 
                         emptyLi = emptyLi + "<li>"+item.name+"</li>";
 
                         
                         suggBox.innerHTML = emptyLi;
-                        console.log(item.name);
                     }
-                    // const data = Object.entries()
-                }else{
-                    suggBox.reset();
                 }
+                // else{
+
+                // }
+                    
+                    for(let j = 0; j <  raw.crystalsStart.length; j++) {
+                        
+                        var itemSolo = raw.crystalsStart[j];
+                        console.log(itemSolo);
+                    }
+                    
                
-                
+                //mettre ds php si resultats vide 
                
             });
         
