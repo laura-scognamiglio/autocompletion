@@ -1,12 +1,40 @@
 body {
   height: 100vh;
   padding: 0 20px;
+  display: flex;
+  /* justify-content: center;  */
+  /* align-items: center; */
+  flex-direction: column;
+  background-position: 100%;
   background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
 }
 
-h1, h2{
+h1{
   font-family: "Allerta Stencil", sans-serif;
-  font-size: 4rem;
+  font-size: 6rem;
+}
+h4{
+  font-family: "Allerta Stencil", sans-serif;
+  font-size: 2.5rem;
+}
+
+h6{
+  font-family: "Allerta Stencil", sans-serif;
+  font-size: 1rem;
+}
+
+
+label{
+  font-family: "Allerta Stencil", sans-serif;
+  font-size: 2rem;
+}
+
+.picSection{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
+  
 }
 
 
@@ -32,10 +60,14 @@ h1, h2{
   outline:none;
   padding: 0 45px 0 0px; 
   height: 50px;
-  width: 90%; 
+  width: 86%; 
   border-radius: 5px;
   font-size: 16px;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+input:focus{
+  outline: none;
 }
 
 .icon{
@@ -61,8 +93,9 @@ h1, h2{
 
 
 .img{
-  max-width: 200px;
-  z-index: -1;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .titlePic{

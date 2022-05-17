@@ -2,18 +2,19 @@
 
 document.addEventListener("DOMContentLoaded", (event) => {
 
-
+//on cible nos éléments de l'index
     const searchWrapper = document.querySelector(".search-input");
     const inputBox = searchWrapper.querySelector("input");
     const suggBox = searchWrapper.querySelector(".results");
    
-    var p = document.createElement('p');
-    // var main = document.querySelector('body');
-
+//on crée un event sur l'input pr récuperer la valeur de l'input
     inputBox.addEventListener("keyup", (e) => {
 
         var searchInputValue = inputBox.value
+//on rejette les vides et les majuscules
+        var searchInputValue = searchInputValue.trim().toLocaleLowerCase();
         // console.log(searchInputValue);
+//on aurai pu accrocher les données en mettant mon form ds les param de formdata
         var datas = new FormData();
         datas.append('search', searchInputValue);
 
@@ -21,13 +22,13 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 method: 'POST',
                 body: datas
             })
-
+//données brut en json vienne de jsonencode de php
             .then(raw => raw.json())  
             .then(raw => {
                 
-                // console.log(raw);
+           
                 let emptyLi = "";
-                //mattre la value en lowercase et avc trim
+//on récupère les deux tableaux reçu des requetes php et du traitement   
                 var items = raw.crystalsAll;
                 var itemStart = raw.crystalsStart;
 
@@ -36,34 +37,25 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     suggBox.innerHTML = emptyLi;
 
                 }else{
-
-                    for(let j = 0; j <  raw.crystalsStart.length; j++) {
-                        
-                        var itemSolo = raw.crystalsStart[j];
-                        var itemSoloId = itemSolo.id 
-
-                        // icon.onclick = ()=>{
-                        //     webLink = `http://localhost:8888/autocompletion/index.html/search?q=${selectData}`;
-                        //     linkTag.setAttribute("href", webLink);
-                        //     linkTag.click();
-                        // }
-                        // <li onclick="location.href='page.html';"  style="cursor:pointer;">...</li>
-
-                        emptyLi = emptyLi + "<li><a href=element.php?id="+itemSoloId+">"+itemSolo.name +"</a></li>";
-
-                        console.log(itemSoloId);
-
-                        for(let i = 0; i < items.length; i++){
-                        
-                        var item = raw.crystalsAll[i];
-
-                        emptyLi = emptyLi + "<li>"+item.name+"</li>";
-
-                        
-                    }
-                    }
-
                     
+                    if(itemStart !== 0){
+                        for(let i = 0; i < items.lenght; i++){
+                            var itemSolo = raw.crystalsAll[i];
+                            var itemSoloId = itemSolo.id
+
+                            emptyLi = emptyLi + "<li><a href=element.php?id="+itemSoloId+">"+itemSolo.name +"</a></li>";
+                        }
+                    }
+                    for(let j = 0; j <  itemStart.length; j++) {
+                        
+                        var itemStartSolo = raw.crystalsStart[j];
+                        var itemStartSoloId = itemStartSolo.id 
+
+
+                        emptyLi = emptyLi + "<li><a href=element.php?id="+itemStartSoloId+">"+itemStartSolo.name +"</a></li>";
+
+                    }
+
                     
                     suggBox.innerHTML = emptyLi;
                 }
