@@ -1,5 +1,5 @@
 body {
-  height: 100vh;
+  height: 150vh;
   padding: 0 20px;
   display: flex;
   /* justify-content: center;  */
@@ -11,7 +11,7 @@ body {
 
 h1{
   font-family: "Allerta Stencil", sans-serif;
-  font-size: 6rem;
+  font-size: 5rem;
 }
 h4{
   font-family: "Allerta Stencil", sans-serif;
@@ -58,10 +58,10 @@ label{
  input {
   border: none;
   outline:none;
-  padding: 0 45px 0 0px; 
+  /* padding: 0 45px 0 0px;  */
   height: 50px;
-  width: 86%; 
-  border-radius: 5px;
+  width: 98%; 
+  border-radius: 3px;
   font-size: 16px;
   box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
 }
@@ -75,7 +75,7 @@ input:focus{
   width: 50px;
   line-height: 50px;
   position: absolute;
-  top: 20px;
+  top: 40px;
   right: 0;
   text-align: center;
   cursor: pointer;
@@ -107,7 +107,17 @@ input:focus{
   display:flex;
   flex-direction: row;
 }
+li::marker{
+  content: "☆ ";
+  font-size: 10px;
+}
 
+li a{
+  padding: 2px;
+  text-decoration: none; 
+  color: black;
+  cursor: pointer;
+}
 
 /* .results li{
   list-style: none;
