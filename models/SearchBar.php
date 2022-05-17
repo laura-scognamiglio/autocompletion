@@ -35,10 +35,10 @@ class SearchBar extends Database{
        return $pierresStart;
     }
 
-    function getCrystalById(){
+    function getCrystalById($id){
 
-        $sqlPrepare = $this->pdo->prepare("SELECT * FROM pierres WHERE `id`= '$idCrystal'");
-            $sqlPrepare->execute();
+        $sqlPrepare = $this->pdo->prepare("SELECT * FROM pierres WHERE id=:id");
+            $sqlPrepare->execute(['id' => $id]);
             $pierreId = $sqlPrepare->fetchAll();
 
         return $pierreId;

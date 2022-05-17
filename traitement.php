@@ -2,13 +2,13 @@
 require_once('models/SearchBar.php');
 
 
-if(empty($_POST['search'])){
+if(!isset($_POST['search']) && $_POST['search'] !== ""){
 
     $emptyString = "";
 
     echo json_encode($emptyString);
 
-}elseif(!empty($_POST['search'])){
+}elseif(isset($_POST['search'])){
 
     $inputUser = htmlspecialchars(trim($_POST['search']));
     $modelSearch = new SearchBar;
@@ -19,7 +19,7 @@ if(empty($_POST['search'])){
         "crystalsAll" => $searchResult, 
         "crystalsStart" => $searchResultStart
     );
-    
+
     echo json_encode($searchResults);
 
 }

@@ -4,7 +4,7 @@ body {
   background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
 }
 
-h1 {
+h1, h2{
   font-family: "Allerta Stencil", sans-serif;
   font-size: 4rem;
 }
@@ -58,6 +58,23 @@ h1 {
  /* opacity: 0; */
  /* pointer-events: none; */
 }
+
+
+.img{
+  max-width: 200px;
+  z-index: -1;
+}
+
+.titlePic{
+  z-index: 100;
+}
+
+.picSection{
+  max-width: 300px;
+  display:flex;
+  flex-direction: row;
+}
+
 
 /* .results li{
   list-style: none;

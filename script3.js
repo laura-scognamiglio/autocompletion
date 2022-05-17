@@ -27,31 +27,47 @@ document.addEventListener("DOMContentLoaded", (event) => {
                 
                 // console.log(raw);
                 let emptyLi = "";
-
+                //mattre la value en lowercase et avc trim
                 var items = raw.crystalsAll;
+                var itemStart = raw.crystalsStart;
 
-                if(searchInputValue != null) {
-                    for(let i = 1; i < items.length; i++){
+                if(searchInputValue == "") {
+
+                    suggBox.innerHTML = emptyLi;
+
+                }else{
+
+                    for(let j = 0; j <  raw.crystalsStart.length; j++) {
+                        
+                        var itemSolo = raw.crystalsStart[j];
+                        var itemSoloId = itemSolo.id 
+
+                        // icon.onclick = ()=>{
+                        //     webLink = `http://localhost:8888/autocompletion/index.html/search?q=${selectData}`;
+                        //     linkTag.setAttribute("href", webLink);
+                        //     linkTag.click();
+                        // }
+                        // <li onclick="location.href='page.html';"  style="cursor:pointer;">...</li>
+
+                        emptyLi = emptyLi + "<li><a href=element.php?id="+itemSoloId+">"+itemSolo.name +"</a></li>";
+
+                        console.log(itemSoloId);
+
+                        for(let i = 0; i < items.length; i++){
                         
                         var item = raw.crystalsAll[i];
-
-                        // console.log(typeof(item));
 
                         emptyLi = emptyLi + "<li>"+item.name+"</li>";
 
                         
-                        suggBox.innerHTML = emptyLi;
                     }
-                }
-                // else{
+                    }
 
-                // }
                     
-                    for(let j = 0; j <  raw.crystalsStart.length; j++) {
-                        
-                        var itemSolo = raw.crystalsStart[j];
-                        console.log(itemSolo);
-                    }
+                    
+                    suggBox.innerHTML = emptyLi;
+                }
+                    
                     
                
                 //mettre ds php si resultats vide 
